@@ -96,7 +96,7 @@ Cada parte es un proyecto Maven independiente. Debes compilar cada uno por separ
 - **ejercicio-previo**
 
 ```bash
-cd ejercicio-precio
+cd ejercicio-previo
 mvn clean package
 ```
 
@@ -111,20 +111,20 @@ mvn clean package
 
 Para ejecutar cada parte se debe estar en la carpeta específica de cada proyecto `/ejercicio-previo` o `/laboratorio`
 
-- **ejercicio-precio**
+- **ejercicio-previo**
 
-En el directorio `ejercicio-precio` ejecute:
+En el directorio `ejercicio-previo` ejecute:
 
 ```bash
-mvn exec:java@ejercicio-precio
+mvn exec:java@ejercicio-previo
 ```
 
-- **Parte 2: Simulador de Canódromo**
+- **laboratorio**
 
-En el directorio `/parte2` ejecute:
+En el directorio `/laboratorio` ejecute:
 
 ```bash
-mvn exec:java@parte2
+mvn exec:java@laboratorio
 ```
 
 > **Nota:** Si su IDE lo permite, también puede ejecutar directamente las clases principales desde la interfaz gráfica del IDE.
