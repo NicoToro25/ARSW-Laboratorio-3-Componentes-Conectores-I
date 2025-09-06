@@ -1,12 +1,19 @@
-# Escuela Colombiana de Ingeniería
-# Arquitecturas de Software - ARSW
-### Taller – Principio de Inversión de dependencias, Contenedores Livianos e Inyección de dependencias.
+# Arquitecturas de Software (ARSW) - Laboratorio #2
+
+## Taller – Principio de Inversión de dependencias, Contenedores Livianos e Inyección de dependencias. - Parte I.
+
+#### Nicolás Toro
+
+[![Java](https://img.shields.io/badge/Java-17%2B-blue.svg)](https://www.oracle.com/java/)
+[![Maven](https://img.shields.io/badge/Maven-Build-brightgreen.svg)](https://maven.apache.org/)
+
+---
 
 Parte I. Ejercicio básico.
 
 Para ilustrar el uso del framework Spring, y el ambiente de desarrollo para el uso del mismo a través de Maven (y NetBeans), se hará la configuración de una aplicación de análisis de textos, que hace uso de un verificador gramatical que requiere de un corrector ortográfico. A dicho verificador gramatical se le inyectará, en tiempo de ejecución, el corrector ortográfico que se requiera (por ahora, hay dos disponibles: inglés y español).
 
-1. Abra el los fuentes del proyecto en NetBeans.
+1. Abra las fuentes del proyecto en NetBeans.
 
 2. Revise el archivo de configuración de Spring ya incluido en el proyecto (src/main/resources). El mismo indica que Spring buscará automáticamente los 'Beans' disponibles en el paquete indicado.
 
@@ -14,7 +21,14 @@ Para ilustrar el uso del framework Spring, y el ambiente de desarrollo para el u
 
 	* GrammarChecker será un bean, que tiene como dependencia algo de tipo 'SpellChecker'.
 	* EnglishSpellChecker y SpanishSpellChecker son los dos posibles candidatos a ser inyectados. Se debe seleccionar uno, u otro, mas NO ambos (habría conflicto de resolución de dependencias). Por ahora haga que se use EnglishSpellChecker.
- 
+
+![img](/ejercicio-previo/img/servicesGrammar.png)
+![img](/ejercicio-previo/img/servicesEnglish.png)
+![img](/ejercicio-previo/img/servicesSpanish.png)
+
+Es importante resaltar que, aunque las implementaciones deben tener la notación **@Service**, si hay más de dos implementaciones, 
+se le debe quitar a una para que Spring sepa cual de las dos inyecciones de dependencias usar.
+
 5.	Haga un programa de prueba, donde se cree una instancia de GrammarChecker mediante Spring, y se haga uso de la misma:
 
 	```java
@@ -25,4 +39,10 @@ Para ilustrar el uso del framework Spring, y el ambiente de desarrollo para el u
 	}
 	```
 	
+![img](/ejercicio-previo/img/instanciaMain.png)
+
+![img](/ejercicio-previo/img/resultadoSpanish.png)
+
 6.	Modifique la configuración con anotaciones para que el Bean ‘GrammarChecker‘ ahora haga uso del  la clase SpanishSpellChecker (para que a GrammarChecker se le inyecte EnglishSpellChecker en lugar de  SpanishSpellChecker. Verifique el nuevo resultado.
+
+![img](/ejercicio-previo/img/resultadoEnglish.png)
