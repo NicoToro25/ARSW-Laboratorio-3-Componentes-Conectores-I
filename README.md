@@ -1,4 +1,4 @@
-# Arquitecturas de Software (ARSW) - Laboratorio #2
+# Arquitecturas de Software (ARSW) - Laboratorio #3
 
 ## Componentes y conectores - Parte I.
 
